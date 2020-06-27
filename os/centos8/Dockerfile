@@ -1,5 +1,5 @@
 # FROM centos:centos8
-FROM repo.home.local/centos:centos8
+FROM repo.home.local/centos:centos8.2.2004
 
 # setup yum repos
 COPY yum.repos.d /etc/yum.repos.d
