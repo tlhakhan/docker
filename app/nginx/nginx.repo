@@ -1,0 +1,7 @@
+[nginx-rpms]
+name=nginx stable repo
+baseurl=http://repo.home.local/artifactory/nginx-packages-remote/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://repo.home.local/artifactory/nginx-packages-remote/keys/nginx_signing.key
+module_hotfixes=true
