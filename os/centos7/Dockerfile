@@ -1,5 +1,5 @@
 # FROM centos:centos7
-FROM repo.home.local/centos:centos7.8.2003
+FROM repo.home.local/dockerhub/centos:centos7.8.2003
 
 # setup yum repos
 COPY yum.repos.d /etc/yum.repos.d
