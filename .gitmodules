@@ -1,0 +1,3 @@
+[submodule "app/smokeping/smokeping/tcpping"]
+	path = app/smokeping/tcpping
+	url = https://github.com/deajan/tcpping
