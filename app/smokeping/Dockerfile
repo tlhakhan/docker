@@ -12,4 +12,9 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY smokeping/ /etc/smokeping/
 
+# probes
+RUN ln -sf /usr/bin/bash /bin/sh
+COPY tcpping/tcpping /usr/bin/tcpping
+RUN chmod a+x /usr/bin/tcpping
+
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
