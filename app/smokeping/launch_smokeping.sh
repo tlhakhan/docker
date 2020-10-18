@@ -6,7 +6,7 @@ PIDFILE="/var/run/smokeping/smokeping.pid"
 COMMAND=/usr/sbin/smokeping
 
 function _kill_process(){
-    echo "killing smokeping"
+    printf "KILL %s (%s)\n" "$(basename $COMMAND)" "$(cat $PIDFILE)"
     kill $(cat $PIDFILE)
     exit 0 
 }
