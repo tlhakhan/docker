@@ -1,6 +1,13 @@
 *** Probes ***
 
++ basefork
+  forks = 10
+
 + FPing
+  binary = /usr/bin/fping
 
-binary = /usr/bin/fping
-
++ TCPPing
+  binary = /usr/bin/tcpping
+  offset = 50%
+  step = 60
+  timeout = 30

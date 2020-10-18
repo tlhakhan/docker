@@ -5,8 +5,35 @@ charset = utf-8
 htmltitle = yes
 graphborders = no
 
-+ charts
++ overview
+ width  = 900
+ height = 500
+ range  = 24h
 
++ detail
+ width  = 900
+ height = 500
+ unison_tolerance = 2
+
+"Last 1 Hour"     1h
+"Last 12 Hours"   12h
+"Last 24 Hours"   24h
+"Last 3 Days"     3d
+"Last 10 Days"    10d
+"Last 30 Days"    30d
+"Last 90 Days"    90d
+"Last 180 Days"   180d
+"Last 400 Days"   400d
+
+++ loss_colors
+  0     00ff00  "0"
+  1     c0ff00  "1"
+  2     ffff00  "2"
+  3     ffc080  "3"
+  4     ff80e0  "4"
+  5     ff0000  "5+"
+
++ charts
 menu = Charts
 title = The most interesting destinations
 
@@ -33,27 +60,3 @@ sorter = Median(entries=>5)
 title = Top Median Roundtrip Time
 menu = by Median
 format = Median RTT %f seconds
-
-+ overview 
-
-width = 600
-height = 50
-range = 10h
-
-+ detail
-
-width = 600
-height = 200
-unison_tolerance = 2
-
-"Last 3 Hours"    3h
-"Last 30 Hours"   30h
-"Last 10 Days"    10d
-"Last 360 Days"   360d
-
-#+ hierarchies
-#++ owner
-#title = Host Owner
-#++ location
-#title = Location
-

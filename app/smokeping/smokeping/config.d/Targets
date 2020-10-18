@@ -1,21 +1,27 @@
 *** Targets ***
 
-probe = FPing
+probe=FPing
 
-menu = Top
-title = Network Latency Grapher
-remark = Welcome to the SmokePing website of xxx Company. \
-         Here you will learn all about the latency of our network.
+# Landing page title and remark
+@include /etc/smokeping/config.d/LandingPage
 
-+ Local
++FPing
+menu=FPing
+title=FPing
 
-menu = Local
-title = Local Network
-#parents = owner:/Test/James location:/
+  ++ google
+  probe=FPing
+  menu=google
+  title=fping google
+  host=google.com
 
-++ LocalMachine
++TCPPing
+menu=TCPPing
+title=TCPPing
 
-menu = Local Machine
-title = This host
-host = localhost
-#alerts = someloss
+  ++ google
+  probe=TCPPing
+  menu=google
+  title=tpcping google
+  host=google.com
+  port=80

@@ -1,15 +1,19 @@
 *** Database ***
 
-step     = 300
+step     = 60
 pings    = 20
 
-# consfn mrhb steps total
+# 60 second for 30+ days
+AVERAGE  0.5   1 44640
 
-AVERAGE  0.5   1  1008
-AVERAGE  0.5  12  4320
-    MIN  0.5  12  4320
-    MAX  0.5  12  4320
-AVERAGE  0.5 144   720
-    MAX  0.5 144   720
-    MIN  0.5 144   720
+# 10 minutes for 90+ days
+AVERAGE  0.5  10 13104
+    MAX  0.5  10 13104
+    MIN  0.5  10 13104
 
+# 1 hour for 400+ days
+AVERAGE  0.5  60  9624
+    MAX  0.5  60  9624
+    MIN  0.5  60  9624
+
+# (+) In order to run graphs over N days you want to keep N+1 records
