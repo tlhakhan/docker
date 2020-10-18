@@ -1,5 +1,5 @@
 # FROM ubuntu:20.04
-FROM repo.home.local/dockerhub/debian:9
+FROM repo.home.local/dockerhub/ubuntu:20.04
 
 # this apt.conf file breaks artifactory generic mirror repo, removing fixes it
 RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes
@@ -17,7 +17,7 @@ RUN debconf-set-selections /deb-selections
 # perform an update and clean up
 RUN apt-get clean && \
     apt-get update && \
-    apt-get install -y apt-utils apt-file curl tzdata && \
+    apt-get install -y dialog debconf-utils apt-utils apt-file curl tzdata && \
     apt-get clean
 
 # add home.local ca certificate to trust

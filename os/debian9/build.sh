@@ -1,5 +1,12 @@
 #!/bin/bash
 set -e
 
-docker build . -t debian:9 -t repo.home.local/tlhakhan/os/debian:9
-docker push repo.home.local/tlhakhan/os/debian:9
+docker build . \
+  -t debian:9 \
+  -t repo.home.local/tlhakhan/os/debian:9 \
+  -t repo.home.local/tlhakhan/os/debian:9-$(date +%Y%m%d)
+
+docker push \
+  repo.home.local/tlhakhan/os/debian:9
+docker push \
+  repo.home.local/tlhakhan/os/debian:9-$(date +%Y%m%d)
