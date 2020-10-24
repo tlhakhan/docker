@@ -11,8 +11,8 @@ title=FPing
 
   ++ google
   probe=FPing
-  menu=google
-  title=fping google
+  menu=google.com
+  title=fping google.com
   host=google.com
 
 +TCPPing
@@ -21,7 +21,7 @@ title=TCPPing
 
   ++ google
   probe=TCPPing
-  menu=google
-  title=tpcping google
+  menu=google.com:80
+  title=tcpping google.com:80
   host=google.com
   port=80
