@@ -1,9 +1,8 @@
 #FROM centos:centos8
-FROM repo.home.local/tlhakhan/os/centos:centos8
+FROM repo.home.local/tlhakhan/os/ubuntu:20.04
 
-ENV ANSIBLE_VERSION=2.9.11
+ENV ANSIBLE_VERSION=2.9
 
-RUN yum makecache && \
-    yum install -y python38 python38-pip ansible-${ANSIBLE_VERSION}
+RUN apt-get install -y ansible=${ANSIBLE_VERSION}* ansible-doc=${ANSIBLE_VERSION}*
 
 WORKDIR /playbooks
