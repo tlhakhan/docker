@@ -15,7 +15,6 @@ RUN mkdir /var/run/smokeping && \
     chown -R smokeping:smokeping /var/cache/smokeping && \
     chown -R smokeping:smokeping /usr/share/smokeping
 
-
 COPY launch_smokeping.sh /launch_smokeping.sh # launch helper for smokeping with supervisord
 COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf

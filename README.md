@@ -11,9 +11,11 @@ The `app` images can then be called into `docker-compose` projects for further a
 ## app
 | Applicaiton | Description |
 | --- | --- |
-| ansible | Ansible 2.9.10 running on Ubuntu |
-| go-env | Go 1.14.10 running on Ubuntu |
-| nginx | Nginx 1.18.0 running on Ubuntu | 
+| ansible | Ansible running on Ubuntu |
+| go-dev | Go development environment running on Ubuntu |
+| nginx | Nginx running on Ubuntu | 
+| squid | Squid running on Ubuntu | 
+| tfptd | tfptd running on Ubuntu | 
 
 ## os
 The OS platforms are configured to trust home lab CA server and uses internal package repository server.

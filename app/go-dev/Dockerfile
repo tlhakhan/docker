@@ -2,7 +2,7 @@ FROM repo.home.local/tlhakhan/os/ubuntu:20.04
 
 # setup 
 ENV GO_VERSION=1.15
-ENV GOPATH=/app
+ENV GOPATH=/project
 ENV GOBIN=/${GOPATH}/bin
 
 # setup path

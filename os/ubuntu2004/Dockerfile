@@ -21,7 +21,7 @@ RUN apt-get clean && \
     apt-get update 
 
 # perform packages install
-RUN xargs -t -a /packages apt-get install -y && \
+RUN xargs -n1 -t -a /packages apt-get install -y && \
     apt-get clean
 
 # add home.local ca certificate to trust
