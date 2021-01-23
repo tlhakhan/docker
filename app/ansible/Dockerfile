@@ -1,8 +1,8 @@
 #FROM centos:centos8
 FROM repo.home.local/tlhakhan/os/ubuntu:20.04
 
-ENV ANSIBLE_VERSION=2.9
+COPY packages /packages
 
-RUN apt-get install -y ansible=${ANSIBLE_VERSION}* ansible-doc=${ANSIBLE_VERSION}*
+RUN xargs -t -n1 -a /packages apt-get install -y 
 
 WORKDIR /playbooks
