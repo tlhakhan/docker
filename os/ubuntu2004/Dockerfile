@@ -1,23 +1,27 @@
 # FROM ubuntu:20.04
 FROM repo.home.local/dockerhub/ubuntu:20.04
 
-# this apt.conf file breaks artifactory generic's remote repo, removing fixes it
-RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes
+ENV TERM=xterm
+
+# send over my preferences
+COPY root /root/
 
 # send over my sources
 COPY sources.list /etc/apt/sources.list
 
-ARG DEBIAN_FRONTEND=noninteractive
-ARG DEBCONF_NONINTERACRTIVE_SEEN=true
-ENV TERM=xterm
+# send over my package list
+COPY packages /packages
 
+# send over selections
 COPY deb-selections /deb-selections
 RUN debconf-set-selections /deb-selections
 
-# perform an update and clean up
+# perform cache update
 RUN apt-get clean && \
-    apt-get update && \
-    apt-get install -y dialog debconf-utils apt-utils apt-file curl tzdata && \
+    apt-get update 
+
+# perform packages install
+RUN xargs -t -a /packages apt-get install -y && \
     apt-get clean
 
 # add home.local ca certificate to trust

@@ -1,0 +1,16 @@
+dialog
+debconf-utils
+apt-utils
+apt-file
+curl
+tzdata
+git
+mosh
+tmux
+iftop
+sysstat
+tree
+rsync
+vim
+gpg
+jq
