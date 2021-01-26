@@ -1,8 +1,6 @@
-FROM repo.home.local/tlhakhan/os/centos:centos8
+FROM repo.home.local/tlhakhan/os/ubuntu:20.04
 
-ENV NGINX_VERSION=1.18.0
+COPY packages /packages
 
-COPY nginx.repo /etc/yum.repos.d/nginx.repo
-
-RUN yum makecache && \
-    yum install -y nginx-${NGINX_VERSION}
+RUN apt-get update && \
+    xargs -a /packages -t -n1 apt-get install -y
