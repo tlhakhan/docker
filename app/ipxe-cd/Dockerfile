@@ -12,7 +12,9 @@ RUN apt-get update && \
 
 RUN git clone -b ${IPXE_VERSION} http://git.home.local/cgit/ipxe/ipxe
 
+# src overrides 
+COPY src/config/general.h /build/ipxe/src/config/general.h
+
 RUN cd ipxe/src && \
-    make all && \
-    make bin/ipxe.iso EMBED=/build/run.ipxe && \
+    make all EMBED=/build/run.ipxe && \
     mv bin/ipxe.iso /build/ipxe.iso
