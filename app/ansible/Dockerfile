@@ -1,4 +1,3 @@
-#FROM centos:centos8
 FROM repo.home.local/tlhakhan/os/ubuntu:20.04
 
 COPY packages /packages
