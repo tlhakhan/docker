@@ -1,2 +1,3 @@
 ansible=2.9*
 ansible-doc=2.9*
+sshpass
