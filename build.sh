@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # stop on fail
-set -x
+set -e
 
 #
 # find all build scripts and execute them
