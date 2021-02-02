@@ -6,4 +6,3 @@ The `app` images can be referenced into `docker-compose` projects.
 | --- | --- |
 | app | Application specific Docker build files |
 | os | OS specific Docker build files |
-``
