@@ -110,7 +110,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define	IMAGE_SCRIPT		/* iPXE script image support */
 //#define	IMAGE_BZIMAGE		/* Linux bzImage image support */
 #define	IMAGE_COMBOOT		/* SYSLINUX COMBOOT image support */
-#define	IMAGE_EFI		/* EFI image support */
+//#define	IMAGE_EFI		/* EFI image support */
 //#define	IMAGE_SDI		/* SDI image support */
 //#define	IMAGE_PNM		/* PNM image support */
 #define	IMAGE_PNG		/* PNG image support */
