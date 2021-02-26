@@ -1,4 +1,4 @@
-# FROM ubuntu:20.04
+#FROM ubuntu:20.04
 FROM repo.home.local/dockerhub/ubuntu:20.04
 
 ENV TERM=xterm
