@@ -13,6 +13,7 @@ gdb
 krb5-user
 krb5-kdc
 libkrb5-dev
+libtasn1-bin
 libacl1-dev
 libaio-dev
 libarchive-dev
@@ -32,6 +33,9 @@ libpam0g-dev
 libparse-yapp-perl
 libpopt-dev
 libreadline-dev
+libtracker-sparql-2.0-dev
+libicu-dev
+libglib2.0-dev
 lmdb-utils
 nettle-dev
 perl

@@ -1,14 +1,15 @@
-FROM repo.home.local/tlhakhan/os/ubuntu:20.04
+FROM repo.tenzin.io/tlhakhan/os/ubuntu:20.04
 
-COPY packages /packages
+COPY files/packages /packages
 
 RUN apt-get update && \
-    xargs -t -n1 -a /packages apt-get install -y
+    xargs -t -a /packages apt-get install -y &&\
+    apt-get clean
 
 WORKDIR /samba-build
 
-RUN curl -s -o - http://repo.home.local/artifactory/samba/samba-4.13.3.tar.gz | tar --strip-components 1 -zxvf - -C .
+RUN curl -o - https://repo.tenzin.io/artifactory/samba/samba-4.14.5.tar.gz | tar --strip-components 1 -zxvf - -C .
 
-RUN ./configure && \
+RUN ./configure --with-shared-modules='!vfs_snapper' && \
     make && \
     make install

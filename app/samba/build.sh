@@ -1,10 +1,12 @@
 #!/bin/bash
 
+REPO_SERVER=repo.tenzin.io
 readlink -f . | xargs -n1 basename | figlet
 sleep 1
 
 docker build . \
   -t samba:latest \
-  -t repo.home.local/tlhakhan/app/samba:latest
+  -t ${REPO_SERVER}/tlhakhan/app/samba:latest
 
-docker push repo.home.local/tlhakhan/app/samba:latest
+docker login ${REPO_SERVER}
+docker push ${REPO_SERVER}/tlhakhan/app/samba:latest
