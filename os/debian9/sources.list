@@ -1,3 +1,0 @@
-deb http://repo.home.local/artifactory/debian stretch main
-deb http://repo.home.local/artifactory/debian stretch/updates main
-deb http://repo.home.local/artifactory/debian stretch-updates main
