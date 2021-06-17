@@ -1,0 +1,8 @@
+apt-utils
+dialog
+debconf-utils
+tzdata
+git
+tree
+vim
+gpg

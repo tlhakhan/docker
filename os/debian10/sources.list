@@ -1,3 +1,0 @@
-deb http://repo.home.local/artifactory/debian buster main
-deb http://repo.home.local/artifactory/debian buster/updates main
-deb http://repo.home.local/artifactory/debian buster-updates main
