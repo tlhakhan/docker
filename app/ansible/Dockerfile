@@ -1,7 +1,9 @@
-FROM repo.home.local/tlhakhan/os/ubuntu:20.04
+FROM repo.tenzin.io/tlhakhan/os/ubuntu:20.04
 
-COPY packages /packages
-
-RUN xargs -t -n1 -a /packages apt-get install -y 
+# send over packages and install
+COPY files/packages /packages
+RUN apt-get update &&\
+    xargs -t -a /packages apt-get install -y &&\
+    apt-get clean
 
 WORKDIR /playbooks
