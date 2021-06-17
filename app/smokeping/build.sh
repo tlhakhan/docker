@@ -1,16 +1,16 @@
 #!/bin/bash
 
+REPO_SERVER=repo.tenzin.io
+
 readlink -f . | xargs -n1 basename | figlet
 sleep 1
 
-# deps
-git submodule init
-git submodule update
-
 docker build . \
   -t smokeping:latest \
-  -t repo.home.local/tlhakhan/app/smokeping:latest \
-  -t repo.home.local/tlhakhan/app/smokeping:$(date +%Y%m%d)
+  -t ${REPO_SERVER}/tlhakhan/app/smokeping:latest \
+  -t ${REPO_SERVER}/tlhakhan/app/smokeping:$(date +%Y%m%d)
 
-docker push repo.home.local/tlhakhan/app/smokeping:latest
-docker push repo.home.local/tlhakhan/app/smokeping:$(date +%Y%m%d)
+docker login ${REPO_SERVER}
+
+docker push ${REPO_SERVER}/tlhakhan/app/smokeping:latest
+docker push ${REPO_SERVER}/tlhakhan/app/smokeping:$(date +%Y%m%d)

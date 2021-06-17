@@ -1,0 +1,14 @@
+rrdtool
+librrds-perl
+libssl-dev
+curl
+smokeping
+tcptraceroute
+traceroute
+ssmtp
+openssh-client
+bind9-utils
+spawn-fcgi
+supervisor
+nginx
+fping

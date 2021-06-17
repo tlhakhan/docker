@@ -1,12 +1,14 @@
-FROM repo.home.local/tlhakhan/os/ubuntu:20.04
+FROM repo.tenzin.io/tlhakhan/os/ubuntu:20.04
 
 # send over pre-seed selections for package installs
-COPY deb-selections /deb-selections
+COPY files/deb-selections /deb-selections
 RUN debconf-set-selections /deb-selections
 
-# set of packages needed for smokeping
+# set of packages needed for smokeping and install
+COPY files/packages /packages
 RUN apt-get update && \
-    apt-get install -y rrdtool librrds-perl libssl-dev curl smokeping tcptraceroute traceroute ssmtp openssh-client bind9-utils spawn-fcgi supervisor nginx fping
+    xargs -t -a /packages apt-get install -y &&\
+    apt-get clean
 
 # set up smokeping dirs
 RUN mkdir /var/run/smokeping && \
@@ -16,17 +18,17 @@ RUN mkdir /var/run/smokeping && \
     chown -R smokeping:smokeping /usr/share/smokeping
 
 # launch helper for smokeping with supervisord
-COPY launch_smokeping.sh /launch_smokeping.sh
-COPY supervisord.conf /etc/supervisord.conf
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY files/launch_smokeping.sh /launch_smokeping.sh
+COPY files/supervisord.conf /etc/supervisord.conf
+COPY files/nginx.conf /etc/nginx/nginx.conf
 
 # smokeping basic config data
-COPY smokeping/ /etc/smokeping/
+COPY files/smokeping/ /etc/smokeping/
 
-# probe setup
-RUN ln -sf /usr/bin/bash /bin/sh
-COPY tcpping/tcpping /usr/bin/tcpping
-RUN chmod a+x /usr/bin/tcpping
+# tcpping probe setup
+RUN git clone -b master https://github.com/deajan/tcpping /tcpping &&\
+    cp /tcpping/tcpping /usr/bin/tcpping &&\
+    chmod a+x /usr/bin/tcpping
 
 # launch supervisord
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
