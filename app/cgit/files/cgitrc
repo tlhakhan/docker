@@ -1,6 +1,8 @@
 root-title=git browser
 virtual-root=/cgit/
 
+clone-url=https://$HTTP_HOST/cgit/$CGIT_REPO_URL
+
 local-time=1
 side-by-side-diffs=1
 enable-git-config=1
@@ -15,6 +17,8 @@ enable-log-filecount=1
 enable-log-linecount=1
 enable-remote-branches=1
 enable-subject-links=1
+# Don't show owner on index page, because all would be labelled root for mirrors.
+enable-index-owner=0
 section-from-path=1
 
 branch-sort=age
