@@ -1,0 +1,5 @@
+#
+# proxy user sudoers file
+#
+Defaults:proxy !requiretty
+proxy ALL=(ALL) NOPASSWD: ALL
