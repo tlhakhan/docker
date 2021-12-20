@@ -1,5 +1,5 @@
 #FROM ubuntu:20.04
-FROM repo.tenzin.io/hub/ubuntu:20.04
+FROM repo.home.internal/hub/ubuntu:20.04
 ENV TERM=xterm
 
 # send over package list
@@ -15,5 +15,5 @@ RUN apt-get update && \
     apt-get clean
 
 # add homelab CA certificate
-COPY files/homelab-ca.crt /usr/local/share/ca-certificates/homelab-ca/homelab-ca.crt
+COPY files/internal-ca.crt /usr/local/share/ca-certificates/internal-ca/internal-ca.crt
 RUN update-ca-certificates

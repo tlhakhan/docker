@@ -1,4 +1,4 @@
-FROM repo.tenzin.io/hub/debian:10
+FROM repo.home.internal/hub/debian:10
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG DEBCONF_NONINTERACRTIVE_SEEN=true
@@ -16,6 +16,6 @@ RUN apt-get update &&\
     xargs -t -a /packages apt-get install -y &&\
     apt-get clean
 
-# add homelab CA certificate
-COPY files/homelab-ca.crt /usr/local/share/ca-certificates/homelab-ca/homelab-ca.crt
+# add internal CA certificate
+COPY files/internal-ca.crt /usr/local/share/ca-certificates/internal-ca/internal-ca.crt
 RUN update-ca-certificates

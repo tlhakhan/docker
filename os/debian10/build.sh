@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-REPO_SERVER=repo.tenzin.io
+REPO_SERVER=repo.home.internal
 
 readlink -f . | xargs -n1 basename | figlet
 sleep 1
