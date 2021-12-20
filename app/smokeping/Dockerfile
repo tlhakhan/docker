@@ -1,4 +1,4 @@
-FROM repo.tenzin.io/tlhakhan/os/ubuntu:20.04
+FROM repo.home.internal/tlhakhan/os/ubuntu:20.04
 
 # send over pre-seed selections for package installs
 COPY files/deb-selections /deb-selections
